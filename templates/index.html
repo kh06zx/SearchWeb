@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{title}}</title>
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<style>
+			* { font-family: '나눔바른고딕', 'NanumBarunGothic', sans-serif; }
+			body { background-color: #fafbfc; }
+			#searchinput { border: 1px solid #e8ebee; border-radius: 6px 0 0 6px; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; border-right: none; padding: 11.5px; width: 80%; }
+			#searchbox { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 600px; height: 300px }
+			#searchinfo { position: absolute; left: 50%; transform: translate(-50%); width: 1200px; height: 100% }
+			#searchinputbox { margin-top: -30px; }
+			#mainimg { margin-top: 35px; margin-bottom: 35px; }
+			#searchbutton { border: 1px solid #e8ebee; border-radius: 6px 0 0 6px; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; border-left: none; border-right: none; margin-left: -5px; background-color: white; padding: 11.5px; width: 60px; }
+			#helpbutton { border: 1px solid #e8ebee; border-radius: 0 6px 6px 0; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; border-left: none; border-right: none; margin-left: -5px; background-color: white; padding: 11.5px; width: 60px; }
+			#title { font-size: 24px; background: linear-gradient(90deg, rgba(117,121,231,1) 0%, rgba(154,179,245,1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+			hr { border: 0; border-top: 1px solid #ccc; }
+			#result { border: 1px solid #e8ebee; border-radius: 6px; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; padding: 30px; width: 800px; margin-bottom: 28px; }
+			#searchside { float: right; width: 248px; border: 1px solid #e8ebee; border-radius: 6px; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; padding: 30px; }
+			#listdata { color: unset; margin-top: 20px; text-decoration: none; display: block; }
+			@media (max-width: 1300px) { #searchside { display: none; } #result { width: unset; } #searchinfo { width: 900px; } /*#searchinput { width: 758px!important; }*/ }
+			@media (max-width: 1000px) { #searchinfo { width: 700px; } /*#searchinput { width: 558px!important; }*/ }
+			@media (max-width: 800px) { #searchinfo { width: 100%; } #searchinput { width: 256px!important; } #searchbox { width: 100%; } }
+			@media (max-width: 500px) { #searchbox img { width: 300px } #mainimg { margin-top: 75px; } }
+			#helpbox { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #e8ebee; border-radius: 6px 0 0 6px; -webkit-box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); box-shadow: 0 15px 20px 0 rgba(0,0,0,.03); background-color: #fff; border-right: none; padding: 46px; width: 500px; display: none; }
+		</style>
+	</head>
+	<body>
+		{{data|safe}}
+		<br>
+	</body>
+	<script>
+		function enterSearch() {
+			if(event.keyCode == 13){
+				gopageSearch();  // 실행할 이벤트
+			}
+		}
+		function gopageSearch() {
+			var x = document.getElementById("searchinput").value;
+			window.location.href = "/search/"+x;
+		}
+
+		function helpdisplayfold(){
+			var helpbox = document.getElementById("helpbox");
+			if(helpbox.style.display=='none'){
+				helpbox.style.display = 'block';
+			}else{
+				helpbox.style.display = 'none';
+			}
+		}
+		
+		function helpdisplayfoldclose(){
+			var helpclosebox = document.getElementById("closebutton");
+			if(helpbox.style.display=='none'){
+				helpbox.style.display = 'block';
+			}else{
+				helpbox.style.display = 'none';
+			}
+		}
+	</script>
+</html>
